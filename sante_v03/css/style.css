@@ -1,0 +1,294 @@
+/* headerのcss */
+*{
+    font-family:  Helvetica,Arial, sans-serif;
+ }
+ 
+body{
+    width:358px;
+    background-color: #ffffff;
+    
+}
+
+header{
+    
+    background-color: #ffffff;
+    text-align: center;
+    position:fixed;
+    z-index: 3;
+    top:8px;
+    left:8px;
+    margin: 0;
+}
+
+
+h1{
+    font-size:20px;
+    margin: 0px auto;
+    
+}
+/* navのデザイン */
+
+
+.clear{
+    clear: both;
+  }
+  
+  
+  .slide-toggle{
+    display: none;
+  }
+  
+  .slidemenu{
+    font-family: arial, sans-serif;
+    max-width: 600px;
+    margin: 0px auto; 
+    /* overflow: hidden; */
+  }
+  
+  .slidemenu label{
+    width: 33%;
+    
+    text-align: center;
+    display: block;
+    float: left;
+    color: #333;
+    opacity: 0.2;
+  }
+  
+  .slide-title{
+      padding:100px;
+  }
+
+  .slidemenu span{
+    padding: 0;  
+  }
+  
+  
+  .slidemenu label:hover{
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .slidemenu label span{
+    display: block;
+    padding: 10px;    
+  }
+  
+
+  
+  /*Bar Style*/
+  
+  .slider{
+    width: 358px;
+    height: 5px;
+    display: block;
+    background: #ccc;
+    /* margin-top: 10px; */
+    border-radius: 5px;
+  }
+  
+  .slider .bar{
+    width: 33%;
+    height: 5px;
+    background: #333;
+    border-radius: 5px;
+  }
+  
+  /*Animations*/
+  .slidemenu label, .slider .bar {
+    transition: all 250ms ease-in-out;
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-sout;
+  }
+  
+  /*Toggle*/
+  
+  .slidemenu .slide-toggle:checked + label{
+    opacity: 1;
+  }
+  
+  
+  
+  .slidemenu #slide-item-1:checked ~ .slider .bar{ margin-left: 0; }
+  .slidemenu #slide-item-2:checked ~ .slider .bar{ margin-left: 33%; }
+  .slidemenu #slide-item-3:checked ~ .slider .bar{ margin-left: 67%; }
+  
+
+#yogaevent-nav img{
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+#danceevent-nav p,
+#yogaevent-nav p,
+#runevent-nav p{
+    margin-top: auto; 
+    
+}
+
+/* datepickerのcss */
+.calender{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.calender img{
+    height:20px;
+}
+#datepicker{
+    width:80px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* footterのcss */ */
+footer{
+    text-align: center;
+    
+ } 
+ #toolbar div{
+    text-align: center;
+    width: 33%;
+    /* border: solid 0.5px black;  */
+    font-size: 10px;
+    
+}
+ #toolbar{
+    
+    width: 358px;
+    display: flex;
+} 
+
+.toolicon{
+    /* fill:red; */
+    height: 28px;
+    width: 28px;
+    margin-top: 2px;
+}
+#home-tool p,
+#activity-tool p,
+#setting-tool p{
+    margin-top: -4px;
+    margin-bottom:1px;
+}
+
+footer{
+    background-color: #fff;
+    position: fixed;
+    z-index: 2;
+    bottom:8px;
+    left:8px;
+}
+
+
+/* containerのcss */
+a{
+    text-decoration: none;
+    color: black;
+
+}
+
+.main-container{
+    position: absolute;
+    top:100px;
+    display: block;
+    width:358px;
+    
+}
+/* .container{
+    margin:auto;
+    width: 354px;
+    height: 265px;
+    background-color: #fff;
+    margin-bottom: 30px;
+
+} */
+
+.container-img{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    width: 100%;
+    box-shadow: #333;
+    
+}
+.detail-container{
+    position: relative;
+    top: -135px;
+    left: 0px;
+    /* text-align: center; */
+    width: 98.29%;
+    height: 85px;
+    background-color: #fff;
+    border:solid 0.3px black;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding-left: 6px;
+    padding-top:10px ;
+    padding-bottom:10px ;
+    margin-bottom: -130px;
+
+    
+}
+.detail-container p{
+    font-size: 20px;
+    margin-left:10px; 
+}
+.profile-container{
+    position: relative;
+    z-index: 2;
+    height: 50px;
+    width: 50px;
+    border: solid 0.3px black;
+    border-radius: 30px;
+    position: relative;
+    top: -120px;
+    left: 280px;
+    background-color: #fff;
+}
+.profile-container img{
+   
+    width:100%;
+    height:100%;
+    border-radius: 30px;
+}
+.time-container{
+    display: inline-block;
+    position: relative;
+    z-index: auto;
+    top: -80px;
+    background-color: #808080;
+    /* opacity: 0.5; */
+    /* z-index: 2; */
+    height: 30px;
+    padding: 0px 5px 0px 5px;
+}
+.time-container p{
+    color: #fff;
+    position: relative;
+    top:-10px;
+}
+.title{
+    display: inline-block;
+    margin: 0px 0px 0px 10px;
+    font-size: 22px;
+    position: relative;
+    top: 4px;
+}
+.location-container{
+    position: relative;
+    top: -50px;
+    left:10px;
+    display: flex;
+}
+.location-icon{
+    position: relative;
+    top:3px;
+    height:18px;
+    width:18px;
+}
+.location{
+    margin: 0;
+    font-size: 18px;
+}
+
+

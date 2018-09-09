@@ -1,0 +1,127 @@
+*{
+    font-family:  Helvetica,Arial, sans-serif;
+ }
+body{
+    width:358px;
+    background-color: #ffffff;
+    
+}
+/* head部分 */
+header{
+    width:100%;
+    text-align: center;
+    position:fixed;
+    margin: 0;
+    display: flex;
+
+}
+h1{
+    font-size:20px;
+    margin: 0px auto;
+    position: relative;
+    left: -26px;
+}
+.back{
+   
+    left: 12px;
+    height: 16px;
+    width: 26px;
+}
+.back img{
+    height: 100%;
+    width:100%;
+}
+
+/* main-container:現在のアクティビティ */
+.main-container{
+    position: absolute;
+    width: 358px;
+    top:20px;
+}
+.details-container{
+    display: flex;
+}
+.detail1{
+    width:175px;
+}
+.detail1 img{
+    width:100%;
+    margin-top: 10px;
+}
+.detail1-text{
+    position:relative;
+    top:-36px;
+    background-color: rgba(192,192,192,0.8);
+}
+.detail1-text p{
+    color:#ffffff;
+    font-size: 12px;
+    margin: 0;
+    position: relative;
+    left: 6px;
+}
+.detail2 p,
+.location p{
+    margin: 3px;
+}
+
+.location-next{
+    display: flex;
+}
+.location-btn{
+    padding-left: 2px;
+    padding-right:2px;
+    position: relative;
+    right: -10px;
+    border: solid 0.3px black;
+    border-radius: 30px;
+}
+.detail2{
+    position:relative;
+    top: 30px;
+    left: 10px;
+}
+hr{
+    position: relative;
+    top:-10px;
+    margin: 0;
+}
+.na-title{
+    margin: 5px;
+    position: relative;
+    left: -7px;
+    position: relative;
+    top: 10px;
+    left: -7px;   
+}
+.past-activity p{
+    margin: 5px;
+}
+
+/* main-container:過去のアクティビティ */
+
+.past{
+    width:100%;
+    margin-bottom: 5px;
+    border: solid 0.3px black;
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+.past p{
+    margin: 5px;
+    
+}
+.past :first-child{
+    position: relative;
+    left:10px;
+    top:3px;
+}
+.past :nth-child(2){
+    position: relative;
+    left:70px;
+}
+.pa-title{
+    position: relative;
+    left: -7px;
+}
