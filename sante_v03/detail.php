@@ -33,6 +33,7 @@ if($status==false){
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?=$row["name"]?></title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/detail.css">
     <script type="text/javascript">
 

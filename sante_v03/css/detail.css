@@ -9,7 +9,7 @@ body{
 
 /* container */
 .main-container{
-    width: 358px;
+    width: 360px;
     height: 196px;
     /* background-color: #ccc; */
 }
@@ -154,6 +154,7 @@ body{
     /* ↑あとで消すオーバーフロー */
 }
 .comment-btn{
+    padding-left: 37px;
     display:flex;
 }
 .comment-btn button{
@@ -229,7 +230,9 @@ hr{
 }
 .foot-container{
     position: relative;
-    top: 30px;
+    top: 30px;   
+    padding-left: 7px;
+
 }
 .agreement-container{
     /* background-color: ; */
@@ -241,60 +244,50 @@ hr{
     width: 350px;
     height: 60px;
     /* display: flex; */
-    border: solid 0.5px black;
+    border: solid 0.5px gray;
     z-index: 2;
     color: #ffffff;
     background-color: gray;
+    box-shadow: 2px 5px 5px darkgrey;
+    border-radius: 30px;
 }
 .agreement-container p{
     position: relative;
     top: 15px;
+    
+    
     margin: auto;
 }
 .join-container{
     /* background-color: ; */
     position: relative;
     top: 10px;
+    text-align: center;
+    
     width: 350px;
     height:60px;
     display: flex;
     border: solid 0.5px black;
-    z-index: 2;
+    box-shadow: 2px 5px 5px darkgrey;
+    /* z-index: 2; */
+    border-radius: 30px;
     margin-bottom: 150px;
 }
-.join-btn-container{
+.join-btn{
+    width: 40px;
+    height: 25px;
     position: relative;
-    text-align: center;
-    top: 9px;
-    left: 35px;
-    height: 40px;
-    width: 151px;
-    border-radius: 20px;
-    border: solid 0.5px black;
+    top: 15px;
+    left:170px;
 }
-#join-btn {
-    margin: 0;
-    font-size: 25px;
-    display: inline-block;
-    position: relative;
-    text-decoration: none;
-    color:black;
-    top: 4px;
 
-}
-.join-participants p{
-    font-size: 15px;
-    position: relative;
-    margin: 0;
-    top: 9px;
-    left: 20px;
-    
-}
-.join-value p{
+.join-value {
     font-size: 25px;
     margin: 0;
     position: relative;
-    top: 10px;
-    left: 20px;
+    top: 10px; 
+    z-index: 2;
+    left: 110px;
+    
 
 }
