@@ -1,27 +1,29 @@
-/* headerのcss */
+/* headerのcss 
+500px以下の画面幅の場合適応*/
+
 *{
+    
     font-family:  Helvetica,Arial, sans-serif;
  }
  
 body{
     width:358px;
-    background-color: #ffffff;
-    
+    /* background-color: #ffffff; */
 }
-
 header{
-    
     background-color: #ffffff;
     text-align: center;
     position:fixed;
     z-index: 3;
-    top:8px;
-    left:8px;
+    /* top:8px;
+    left:8px; */
     margin: 0;
 }
 
 
 h1{
+    background-color: #ffffff;
+    /* background-color: #ffffff; */
     font-size:20px;
     margin: 0px auto;
     
@@ -176,8 +178,8 @@ footer{
     background-color: #fff;
     position: fixed;
     z-index: 2;
-    bottom:8px;
-    left:8px;
+    bottom:0px;
+    /* left:8px; */
 }
 
 
@@ -265,7 +267,7 @@ a{
 .time-container p{
     color: #fff;
     position: relative;
-    top:-10px;
+    top:4px;
 }
 .title{
     display: inline-block;

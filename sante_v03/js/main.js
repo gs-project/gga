@@ -38,7 +38,9 @@ $(function(){
     function makeContainers(item){
             $.getJSON("json/activity.json",
                 function pushes(data){
+                    
                     for (let i = 0; i < data.length; i++) {
+                        
                         if(data[i].key === 'fun') {
                             fun.push(data[i]);
                         }else if(data[i].key ==='relax'){
@@ -49,7 +51,7 @@ $(function(){
                     }
                     // let i =0;
                 for(var i=0; i< item.length; i++){
-                    let container = $('<a href="detail.php?activity_id=' + item[i].id + '"></a>');
+                    let container = $('<a href="detail.php?activity_id='+item[i].id+'"></a>');
                 //    console.log(item[i].id);
                     let imageContainer = $('<div></div>');
                     let timeContainer = $('<div></div>');
@@ -66,9 +68,9 @@ $(function(){
                     $(locationContainer).addClass("location-container");
                     $(location).addClass("location");
                     //ここの画像ファイルとテキストを入れる形に
-                    imageContainer.html('<img class ="container-img"src="main_img/'+ item[i].image +'" alt="' + item[i].name + '">');
+                    imageContainer.html('<img class ="container-img"src="main_img/'+ item[i].image +'" alt="' + item[i].name + '">')
                     timeContainer.html('<p>'+ item[i].startTime +'~'+ item[i].endTime +'</p>');
-                    profileContainer.html('<img src="host_img/' + item[i].profile +'" alt="プロフィール">');
+                    profileContainer.html('<img src="' + item[i].profile +'" alt="プロフィール">');
                     detailContainer.html('<p>'+ item[i].name +'</p>');
                     location.html()
                     locationContainer.html(location);
@@ -76,26 +78,33 @@ $(function(){
                     container.append(timeContainer).append(profileContainer).append(detailContainer).append(locationContainer);
                     $(".main-container").prepend(container);
                     // console.log(relax);
+                    
                     // console.log(hard);
                 }
             });
     }
     makeContainers(fun);
-
+    
 
     $('#slide-title1').on("click", function(){ 
-        fun=[];
-        $(".main-container").empty();
+        fun =[];
+        $('.main-container').empty();
         makeContainers(fun);
+        console.log(fun);
     });
     $('#slide-title2').on("click", function(){ 
         relax = [];
-        $(".main-container").empty();
+        $('.main-container').empty();
         makeContainers(relax);
+        console.log(relax);
     });
     $('#slide-title3').on("click", function(){ 
         hard = [];
-        $(".main-container").empty();
+        $('.main-container').empty();
         makeContainers(hard);
+        console.log(hard);
+        console.log(hard);
+        
     });
 });
+    
