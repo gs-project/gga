@@ -68,11 +68,33 @@ $(function(){
                     $(locationContainer).addClass("location-container");
                     $(location).addClass("location");
                     //ここの画像ファイルとテキストを入れる形に
-                    imageContainer.html('<img class ="container-img"src="main_img/'+ item[i].image +'" alt="' + item[i].name + '">')
+                    function　images(){
+                        if(item[i].image == null){                            
+                            images = '<img class ="ci-null"src="img/gene_noimage.png" alt="画像がありません">';
+                            // $("image-container").addClass("ci-null-container");
+                        } else{            
+                            images = '<img class ="container-img"src="main_img/'+ item[i].image +'" alt="' + item[i].name + '">';
+                        }
+                        return images;
+                    }
+
+                    function　profiles(){
+                        if(item[i].profile == null){                            
+                            profiles ='<img src="img/gene_noimage.png" alt="プロフィール">';
+                            // console.log(profile);
+                            
+                        } else{            
+                            profiles ='<img src="host_img/' + item[i].profile +'" alt="プロフィール">';
+                        }
+                        return profiles;
+                    }
+                     console.log(profiles());                
+                    
+                    imageContainer.html(images);
                     timeContainer.html('<p>'+ item[i].startTime +'~'+ item[i].endTime +'</p>');
-                    profileContainer.html('<img src="' + item[i].profile +'" alt="プロフィール">');
+                    profileContainer.html(profiles);
                     detailContainer.html('<p>'+ item[i].name +'</p>');
-                    location.html()
+                    location.html();
                     locationContainer.html(location);
                     container.html(imageContainer);
                     container.append(timeContainer).append(profileContainer).append(detailContainer).append(locationContainer);
@@ -96,7 +118,7 @@ $(function(){
         relax = [];
         $('.main-container').empty();
         makeContainers(relax);
-        console.log(relax);
+        
     });
     $('#slide-title3').on("click", function(){ 
         hard = [];
@@ -106,5 +128,6 @@ $(function(){
         console.log(hard);
         
     });
+    
 });
     

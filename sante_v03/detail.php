@@ -76,8 +76,36 @@ if($status==false){
                 <div id="ZMap" ></div>
 
         </div>
+        <script>
+            var map, mrk,
+                lat = 38.6778614, lon = 139.7703167;
+
+            function loadMap() {
+                var latlon = new ZDC.LatLon(lat, lon);
+                map = new ZDC.Map(
+                    document.getElementById('ZMap'),
+                    {
+                        latlon: latlon,
+                        zoom: 9,
+                        mapType: ZDC.MAPTYPE_HIGHRES_LV18
+                    }
+                );
+
+                /* スケールバーを作成 */
+                map.addWidget(new ZDC.ScaleBar());
+
+                /* 通常のコントロールを表示 */
+                map.addWidget(new ZDC.Control());
+
+                /* マーカを作成 */
+                mrk = new ZDC.Marker(latlon);
+
+                /* マーカを追加 */
+                map.addWidget(mrk);
+            }
+        </script>
         <div class="comment-container">
-            <p class="comment"><?=$row["description"]?>
+            <p id ="comment" class="comment"><?=$row["description"]?>
 
             
             </p>
@@ -91,20 +119,23 @@ if($status==false){
             <div class="agreement-container">
                 <p>利用規約・注意事項など</p>
             </div>
-            <div class="join-container">
-                <div class="join-detail">
-                    <div class="join-value">
-                    <p><?=$row["price"]?></p>            
+        
+                
+                <a class="join-container" href="join.php?activity_id=<?=$row["activity_id"]?>">          
+                    <div class="join-detail">
+                        <div class="join-value">
+                        <p>¥<?=$row["price"]?></p> 
+                        <img src="icon/joinBtn_icon.png" alt="参加" class="join-btn">               
+                        </div>
                     </div>
-                </div>
-                <div class="join-btn-container">
-                <a id="join-btn" href="join.php?activity_id=<?=$row["activity_id"]?>">JOIN</a>
-            </div>
+                </a>
+            
 
-            </div>
+            
         </div>
-    </div>
+    </div>    
      <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/detail.js"></script>
 </body>
 </html>
