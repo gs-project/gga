@@ -10,7 +10,7 @@ $(function(){
     });
     $(".join-container").click(function(){
         console.log('test')
-        swal("Welcom!!", "イベント詳細はActivity画面で確認できます", "success");
+        swal("Welcom!!", "", "success");
     });
     console.log("hey");
         
