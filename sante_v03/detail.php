@@ -55,7 +55,7 @@ if($status==false){
                 <img src="host_img/<?=$row["host_img"]?>">
                 </div>
                 <h2 class="title"><?=$row["name"]?></h2>
-                <p ><?=$row["date"]?> <?=$row["start_time"]?>~<?=$row["end_time"]?></p>
+                <p ><span class="date"><?=$row["date"]?></span>  <?=$row["start_time"]?>~<?=$row["end_time"]?></p>
             </div>
             <div class="other-info">
                 <div class="location-container">
