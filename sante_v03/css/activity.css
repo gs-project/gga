@@ -39,22 +39,20 @@ h1{
     top:20px;
 }
 .details-container{
-    display: flex;
+    /* display: flex; */
 }
-.detail1{
-    width:175px;
-}
+
 .detail1 img{
     width:100%;
     margin-top: 10px;
 }
 .detail1-text{
     position:relative;
-    top:-36px;
+    /* top:-36px; */
     background-color: rgba(192,192,192,0.8);
 }
 .detail1-text p{
-    color:#ffffff;
+    /* color:#ffffff; */
     font-size: 12px;
     margin: 0;
     position: relative;
@@ -78,7 +76,6 @@ h1{
 }
 .detail2{
     position:relative;
-    top: 30px;
     left: 10px;
 }
 hr{

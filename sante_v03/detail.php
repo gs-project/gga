@@ -40,8 +40,7 @@ if($status==false){
     </script>
 </head>
 
-    <header>
-    </header>
+<body >
 
     <div class="main-container">
         <a href="home.php" class="back">    
@@ -70,39 +69,67 @@ if($status==false){
                 </div>
             </div>
         </div>
-
-        <div class="map-container">
-                <div id="ZMap" ></div>
-
-        </div>
+        
+        <!-- 地図を表示させる要素。widthとheightを必ず指定する。 -->
+        <div  class="map-container" id="map" style="width:100%; height:100%"></div>
         <script>
-            var map, mrk,
-                lat = 38.6778614, lon = 139.7703167;
+                let map;
+                let address = "<?=$row["location"]?>";
+                function codeAddress() {
+                    //     map = new google.maps.Map(document.getElementById('map'), {
+                    //     center: {lat: -34.397, lng: 150.644},
+                    //     zoom: 8
+                    //     });
+                    // }
+                    // google.maps.Geocoder()コンストラクタのインスタンスを生成
+                    var geocoder = new google.maps.Geocoder();
 
-            function loadMap() {
-                var latlon = new ZDC.LatLon(lat, lon);
-                map = new ZDC.Map(
-                    document.getElementById('ZMap'),
-                    {
-                        latlon: latlon,
-                        zoom: 9,
-                        mapType: ZDC.MAPTYPE_HIGHRES_LV18
+                    // 地図表示に関するオプション
+                    var mapOptions = {
+                            zoom: 18,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            // マウスホイールによるズーム操作を無効
+                            scrollwheel: false
+                    };
+
+                    // 地図を表示させるインスタンスを生成
+                    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                    // geocoder.geocode()メソッドを実行 
+                    geocoder.geocode( { 'address': address}, function(results, status) {
+                    // ジオコーディングが成功した場合
+                        if (status == google.maps.GeocoderStatus.OK) {
+                                // google.maps.Map()コンストラクタに定義されているsetCenter()メソッドで
+                                // 変換した緯度・経度情報を地図の中心に表示
+                                map.setCenter(results[0].geometry.location);
+
+                                // 地図上に目印となるマーカーを設定います。
+                                // google.maps.Marker()コンストラクタにマーカーを設置するMapオブジェクトと
+                                // 変換した緯度・経度情報を渡してインスタンスを生成
+                                // →マーカー詳細
+                                var marker = new google.maps.Marker({
+                                map: map,
+                                position: results[0].geometry.location
+                                });
+                        // ジオコーディングが成功しなかった場合
+                        } else {
+                                console.log('Geocode was not successful for the following reason: ' + status);
+                        } 
+                    });
+        
+                    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                            infoWindow.setPosition(pos);
+                            infoWindow.setContent(browserHasGeolocation ?
+                                                'Error: The Geolocation service failed.' :
+                                                'Error: Your browser doesn\'t support geolocation.');
+                            infoWindow.open(map);
                     }
-                );
+                };
+               
+                
 
-                /* スケールバーを作成 */
-                map.addWidget(new ZDC.ScaleBar());
-
-                /* 通常のコントロールを表示 */
-                map.addWidget(new ZDC.Control());
-
-                /* マーカを作成 */
-                mrk = new ZDC.Marker(latlon);
-
-                /* マーカを追加 */
-                map.addWidget(mrk);
-            }
         </script>
+
         <div class="comment-container">
             <p id ="comment" class="comment"><?=$row["description"]?>
 
@@ -132,9 +159,14 @@ if($status==false){
 
             
         </div>
-    </div>    
-     <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
-     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     </div>   
+       
+    <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEInW7ENSHuuWsQPHPvZA12wFZA33jlnQ&callback=codeAddress"
+        async defer>
+    </script>
+    <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/detail.js"></script>
 </body>
 </html>

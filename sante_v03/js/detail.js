@@ -10,10 +10,11 @@ $(function(){
     });
     $(".join-container").click(function(){
         console.log('test')
-        swal("Welcom!!", "", "success");
+        swal("Welcome!!", "", "success");
     });
     console.log("hey");
-        
-        
+    
+    
+     
 });
 

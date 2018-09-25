@@ -25,37 +25,37 @@ if($status==false){
   //Selectデータの数だけ自動でループしてくれる
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
     $view .='<div class="details-container">';
-    $view .= '<div class="detail1">'; 
-    $view .= '<img src="main_img/'.$result["main_img"].'">';
-    $view .= '<div class="detail1-text">';
-    $view .= '<p class="title-next">';
-    $view .= h($result["name"]);
-    $view .= '</p>';
-    $view .= '<p>';
-    $view .= h($result["price"]);
-    $view .= '</p>';
-    $view .= '</div>';
+        $view .= '<div class="detail1">'; 
+        $view .= '<img src="main_img/'.$result["main_img"].'">';
     $view .= '</div>';
 
     $view .= '<div class="detail2">';
-    $view .= '<p class="date-next">';
-    $view .= h($result["date"]);
-    $view .= '</p>';
-    $view .= '<p class="time-next">';
-    $view .= h($result["start_time"]);
-    $view .= h($result["end_time"]);
-    $view .= '</p>';
-    $view .= '<div class="location-next">';
-    $view .= '<p class="location-name">';
-    $view .= h($result["location"]);
-    $view .= '</p>';
-    $view .= '<div class="location-btn"><p>地図詳細</p>';
-    $view .= '</div>';
-    // $view .= '<a href="cancel_join.php?activity_id='.$result["activity_id"].'">';
-    // $view .= '[キャンセル]';
-    // $view .= '</a>';
-    $view .= '</div>';
-    $view .= '</div>';
+        $view .= '<div class="detail1-text">';
+            $view .= '<p class="title-next">';
+            $view .= h($result["name"]);
+            $view .= '</p>';
+            $view .= '<p>';
+            $view .= h($result["price"]);
+            $view .= '</p>';
+        $view .= '</div>';
+        $view .= '<p class="date-next">';
+        $view .= h($result["date"]);
+        $view .= '</p>';
+        $view .= '<p class="time-next">';
+        $view .= h($result["start_time"]);
+        $view .= h($result["end_time"]);
+        $view .= '</p>';
+        $view .= '<div class="location-next">';
+            $view .= '<p class="location-name">';
+            $view .= h($result["location"]);
+            $view .= '</p>';
+            $view .= '<div class="location-btn"><p>地図詳細</p>';
+            // $view .= '</div>';
+            // $view .= '<a href="cancel_join.php?activity_id='.$result["activity_id"].'">';
+            // $view .= '[キャンセル]';
+            // $view .= '</a>';
+            $view .= '</div>';
+        $view .= '</div>';
     $view .= '</div>';
   }
 }
@@ -73,7 +73,7 @@ if($status==false){
 <body>
     <header >
         <a href="home.php" class="back"><img src="icon/gene_back.png" alt="もどる"></a>
-            <h1>ACTIVITY</h1> 
+        <h1>ACTIVITY</h1> 
     </header>
     <div class="main-container">
         <div class="next-activity">

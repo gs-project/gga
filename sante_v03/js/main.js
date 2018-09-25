@@ -57,16 +57,18 @@ $(function(){
                     let timeContainer = $('<div></div>');
                     let profileContainer = $('<div></div>');
                     let detailContainer = $('<div></div>');
-                    let locationContainer = $('<div><img class="location-icon" src="icon/cont_location_icon.png" alt="アイコン"></div>');
-                    let location =$(' <img class="location-icon" src="icon/cont_location_icon.png" alt="アイコン"><p>'+ item[i].location +'</p>');
+                    let detailNameContainer =$('<div></div>');
+                    let locationContainer = $('<div></div>');
+                    let location =$('<p>'+ item[i].location +'</p>');
 
                     $(container).addClass("container");
                     $(imageContainer).addClass("image-container");
                     $(timeContainer).addClass("time-container");
                     $(profileContainer).addClass("profile-container");
                     $(detailContainer).addClass("detail-container");
-                    $(locationContainer).addClass("location-container");
-                    $(location).addClass("location");
+                    $(detailNameContainer).addClass("detailName-container");
+                    $(locationContainer).addClass("location-container");                    
+                    $(location).addClass("location-name");
                     //ここの画像ファイルとテキストを入れる形に
                     function　images(){
                         if(item[i].image == null){                            
@@ -93,11 +95,16 @@ $(function(){
                     imageContainer.html(images);
                     timeContainer.html('<p>'+ item[i].startTime +'~'+ item[i].endTime +'</p>');
                     profileContainer.html(profiles);
-                    detailContainer.html('<p>'+ item[i].name +'</p>');
-                    location.html();
-                    locationContainer.html(location);
+
+                    
+                    detailNameContainer.html('<p>'+ item[i].name +'</p>');
+                    // location.html();
+                    // locationIcon.html();
+                    // locationContainer.append(locationIcon);
+                    locationContainer.html('<img class="location-icon" src="icon/cont_location_icon.png" alt="アイコン"></img>').append(location);
                     container.html(imageContainer);
-                    container.append(timeContainer).append(profileContainer).append(detailContainer).append(locationContainer);
+                    detailContainer.append(detailNameContainer).append(locationContainer)
+                    container.append(timeContainer).append(profileContainer).append(detailContainer);
                     $(".main-container").prepend(container);
                     // console.log(relax);
                     
@@ -128,6 +135,9 @@ $(function(){
         console.log(hard);
         
     });
+
+    // let address = document.getElementsByClassName('location-name')[0].innerHTML; 
+    // console.log(address);
     
 });
     
