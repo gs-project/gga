@@ -101,7 +101,7 @@
                 <!-- Item 3 -->
                 <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle"/>
                 <label for="slide-item-3"><span id="slide-title3">HARD</span></label>
-                
+               
                 <div class="clear"></div>
                 
                 <!-- Bar -->

@@ -4,16 +4,22 @@
     
     font-family:  Helvetica,Arial, sans-serif;
  }
+
+ body{
+    background: #f8f8f8;
+    font-size: 14px;
+    font-family: Helvetica,Arial, sans-serif;
+    margin: 0;
+    color: #333;
+ }
  
-body{
-    width:358px;
-    /* background-color: #ffffff; */
-}
+
 header{
+    width: 100%;
     background-color: #ffffff;
     text-align: center;
     position:fixed;
-    z-index: 3;
+    z-index: 4;
     /* top:8px;
     left:8px; */
     margin: 0;
@@ -80,7 +86,7 @@ h1{
   /*Bar Style*/
   
   .slider{
-    width: 358px;
+    width: 100%;
     height: 5px;
     display: block;
     background: #ccc;
@@ -142,11 +148,16 @@ h1{
     text-align: center;
 }
 
-/* footterのcss */ */
-footer{
+/* footterのcss */ 
+ footer{
     text-align: center;
-    
- } 
+    background-color: #fff;
+    position: fixed;
+    z-index: 3;
+    bottom:0px;
+    width: 100%;
+    /* left:8px; */
+}
  #toolbar div{
     text-align: center;
     width: 33%;
@@ -156,7 +167,7 @@ footer{
 }
  #toolbar{
     
-    width: 358px;
+    width: 100%;
     display: flex;
 } 
 
@@ -173,28 +184,22 @@ footer{
     margin-bottom:1px;
 }
 
-footer{
-    background-color: #fff;
-    position: fixed;
-    z-index: 2;
-    bottom:0px;
-    /* left:8px; */
-}
+
 
 
 /* containerのcss */
 a{
     text-decoration: none;
     color: black;
+    position:relative;
 
 }
 
 .main-container{
-    position: absolute;
-    top:100px;
     display: block;
-    width:358px;
-    
+    width: 95%;
+    padding-top: 100px;
+    margin: 0 auto;
 }
 /* .container{
     margin:auto;
@@ -209,53 +214,59 @@ a{
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     width: 99.8%;
+    height: 100%;
     box-shadow: #333;
     border: solid 0.3px black;
-    border-radius: 30px;
+    /* border-radius: 30px; */
 }
 
 
 /*  データベースのimageが正常の場合 */
+.image-container{
+    height:160px;
+}
 .container-img{
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     width: 100%;
-    box-shadow: #333;
+    height: 100%;
+    margin: 0 auto;
     
 }
 .detail-container{
-    position: relative;
-    top: -135px;
-    left: 0px;
+        position: relative;
+    margin-top: -50px;
+    margin-bottom: 10px;
+    /* left: 0px; */
+    z-index: 2;
     /* text-align: center; */
-    width: 98.29%;
-    height: 85px;
+    /* width: 100%; */
+    height: 80px;
     background-color: #fff;
-    border:solid 0.3px black;
+    /* border: solid 0.3px black; */
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
-    /* padding-left: 6px;
-    padding-top:10px ;
-    padding-bottom:10px ; */
-    margin-bottom: -130px;
-
-    
 }
+/* .detail-container:last-child{
+    margin-bottom: -40px;
+} */
 .locationName-container{
-    font-size: 20px;
-    margin-left:10px; 
-    margin: 10px 0px 0px 10px;
+    position: absolute;
+    display: flex;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
 }
 .profile-container{
     position: relative;
-    z-index: 2;
+    z-index: 3;
     height: 50px;
     width: 50px;
     border: solid 0.3px black;
     border-radius: 30px;
     position: relative;
-    top: -120px;
-    left: 280px;
+    top: -40px;
+    left: 270px;
     background-color: #fff;
 }
 .profile-container img{
@@ -266,12 +277,13 @@ a{
 }
 .time-container{
     display: inline-block;
-    position: relative;
+    position: absolute;
+    /* margin-bottom: 100px; */
     z-index: auto;
-    top: -80px;
+    top: -30px;
     background-color: #808080;
     /* opacity: 0.5; */
-    /* z-index: 2; */
+    z-index: 2;
     height: 30px;
     padding: 0px 5px 0px 5px;
 }
@@ -288,7 +300,10 @@ a{
     top: 4px;
 }
 .detailName-container{
-    margin: 15px 20px 0px;
+    position: absolute;
+    top: 10px;
+    /* margin: 15px 20px 0px; */
+    left: 20px;
 }
 .detailName-container p{
     font-size: 18px;
@@ -296,10 +311,10 @@ a{
     color: #6c6c6c;
 }
 .location-container{
-    /* position: relative;
-    left:10px; */
     display: flex;
-    margin:5px 0px 0px 20px;
+    position: absolute;
+    top: 40px;
+    left: 20px;
 }
 
 .location-icon{
